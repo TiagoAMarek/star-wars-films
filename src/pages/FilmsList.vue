@@ -2,6 +2,10 @@
   <div class="films-page container">
     <h1 class="films-page__title title">Star Wars films</h1>
 
+    <div class="films-page__loader" v-if="loading">
+      <img class="films-page__loader-gif" src="@/assets/loading.gif">
+    </div>
+
     <ul class="films-page__list">
       <li v-for="film in films" v-bind:key="film.id">
         <section class="hero is-light">
@@ -26,6 +30,12 @@ import '@/utils/filters'
 export default {
   name: 'FilmsList',
 
+  data() {
+    return {
+      loading: false,
+    }
+  },
+
   computed: {
     ...mapGetters('films', {
       films: 'getFilms'
@@ -39,7 +49,9 @@ export default {
   },
 
   async created() {
+    this.loading = true
     await this.fetchFilms()
+    this.loading = false
   },
 }
 </script>
@@ -52,6 +64,11 @@ export default {
 
     &__title {
       text-align: center;
+    }
+
+    &__loader {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>
