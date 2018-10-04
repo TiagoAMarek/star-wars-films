@@ -1,4 +1,5 @@
 # Star Wars Films
+This project lists Star Wars Films :star:
 
 ## Architecture
 
@@ -19,14 +20,9 @@ npm install
 npm start
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
 ### Run your tests
 ```
-npm run test
+npm test
 ```
 
 ### Lints and fixes files
