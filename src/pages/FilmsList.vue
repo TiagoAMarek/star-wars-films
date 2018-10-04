@@ -8,16 +8,7 @@
 
     <ul class="films-page__list">
       <li v-for="film in films" v-bind:key="film.id">
-        <section class="hero is-light">
-          <div class="hero-body">
-            <div class="container">
-              <h2 class="title">{{film.title}}</h2>
-              <h3 class="subtitle">{{film.release_date | formatDate}}</h3>
-            </div>
-          </div>
-        </section>
-        <h4>Director: {{film.director}}</h4>
-        <p>{{film.opening_crawl}}</p>
+        <film :film="film"></film>
       </li>
     </ul>
   </div>
@@ -26,9 +17,14 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import '@/utils/filters'
+import Film from '@/components/Film'
 
 export default {
   name: 'FilmsList',
+
+  components: {
+    Film,
+  },
 
   data() {
     return {
