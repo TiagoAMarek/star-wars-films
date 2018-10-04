@@ -6,11 +6,15 @@
       <img class="films-page__loader-gif" src="@/assets/loading.gif">
     </div>
 
-    <ul class="films-page__list">
+    <ul class="films-page__list" v-if="films.length > 0">
       <li v-for="film in films" v-bind:key="film.id">
         <film :film="film"></film>
       </li>
     </ul>
+
+    <p class="films-page__no-movies" v-if="films.length < 0">
+      There are no Star Wars movies to show :(
+    </p>
   </div>
 </template>
 
@@ -65,6 +69,10 @@ export default {
     &__loader {
       display: flex;
       justify-content: center;
+    }
+
+    &__no-movies {
+      text-align: center;
     }
   }
 </style>
