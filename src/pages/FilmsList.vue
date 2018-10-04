@@ -12,7 +12,7 @@
             </div>
           </div>
         </section>
-        <p>Director: {{film.director}}</p>
+        <h4>Director: {{film.director}}</h4>
         <p>{{film.opening_crawl}}</p>
       </li>
     </ul>
@@ -20,22 +20,27 @@
 </template>
 
 <script>
-import films from '@/api/films'
+import { mapGetters, mapActions } from 'vuex'
 import '@/utils/filters'
 
 export default {
   name: 'FilmsList',
 
-  data () {
-    return {
-      films: null,
-    }
+  computed: {
+    ...mapGetters('films', {
+      films: 'getFilms'
+    }),
   },
 
-  async created () {
-    const { results } = await films.getFilms()
-    this.films = results
-  }
+  methods: {
+    ...mapActions({
+      fetchFilms: 'films/fetchFilms',
+    })
+  },
+
+  async created() {
+    await this.fetchFilms()
+  },
 }
 </script>
 

@@ -3,11 +3,13 @@
     <img class="app-header__logo" src="@/assets/logo.png" alt="Star Wars logo">
   </header>
 </template>
+
 <script>
 export default {
   name: 'AppHeader',
 }
 </script>
+
 <style lang="scss">
   .app-header {
     align-items: center;
