@@ -38,7 +38,7 @@ export default {
 
   computed: {
     ...mapGetters('films', {
-      films: 'getFilms'
+      films: 'getSortedFilms'
     }),
   },
 

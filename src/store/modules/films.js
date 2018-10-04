@@ -8,8 +8,8 @@ export default {
   },
 
   getters: {
-    getFilms(state) {
-      return state.films
+    getSortedFilms(state) {
+      return state.films.sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
     }
   },
 
