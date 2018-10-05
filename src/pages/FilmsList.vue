@@ -20,7 +20,6 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import '@/utils/filters'
 import Film from '@/components/Film'
 
 export default {
