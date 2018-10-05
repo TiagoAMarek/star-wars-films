@@ -8,7 +8,10 @@ This project lists Star Wars Films :star:
 - [Vuex](https://vuex.vuejs.org/)
 - [Bulma](https://bulma.io/)
 
-This project was builded using [vue-cli 3](https://cli.vuejs.org/)
+## This project was builded with
+- [vue-cli 3](https://cli.vuejs.org/)
+- NodeJS 8.11.3
+- NPM 5.6.0
 
 ## Project setup
 ```
