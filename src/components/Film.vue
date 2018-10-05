@@ -2,8 +2,8 @@
   <div class="film">
     <section class="hero is-light">
       <div class="hero-body">
-        <h2 class="title">{{film.title}}</h2>
-        <h3 class="subtitle">{{film.release_date | formatDate}}</h3>
+        <h2 class="film__title title">{{film.title}}</h2>
+        <h3 class="film__release-date subtitle">{{film.release_date | formatDate}}</h3>
       </div>
     </section>
     <div class="film__container">
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import '@/utils/filters'
+
 export default {
   name: 'Film',
 
